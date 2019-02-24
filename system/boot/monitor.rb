@@ -1,6 +1,7 @@
 RodaDryReactPpla::Container.boot :monitor do
   init do
     require "dry/monitor"
+    Dry::Monitor.load_extensions(:sql)
   end
 
   start do
