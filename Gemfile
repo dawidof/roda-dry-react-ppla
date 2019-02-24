@@ -32,10 +32,6 @@ group :development, :test do
 end
 
 group :test do
-  gem "capybara"
-  gem "capybara-screenshot"
-  gem "database_cleaner"
-  gem "poltergeist"
   gem "rspec"
   gem "rom-factory", "~> 0.5"
 end
