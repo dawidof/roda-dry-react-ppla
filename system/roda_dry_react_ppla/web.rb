@@ -16,19 +16,34 @@ module RodaDryReactPpla
 
     plugin :error_handler
     plugin :multi_route
+    plugin :not_found
+    plugin :caching
 
     route do |r|
-      # Enable this after writing your first web/routes/ file
-      # r.multi_route
-
       r.root do
-        'Hello World'
+        'This application is made to learn dry-rb, roda gems and also react'
       end
+
+      r.multi_route
+    end
+
+    not_found do
+      response.status = 404
+      { error: 'Page not found' }
     end
 
     error do |e|
       self.class[:rack_monitor].instrument(:error, exception: e)
-      raise e
+      raise e if ENV['RACK_ENV'] == 'development'
+
+      if e.is_a?(ROM::TupleCountMismatchError)
+        response.status = 404
+        response.cache_control private: true, no_cache: true
+        { error: 'Record not found' }
+      else
+        response.cache_control private: true, no_cache: true
+        { error: 'Internal Server Error' }
+      end
     end
 
     load_routes!
