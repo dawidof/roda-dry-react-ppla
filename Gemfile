@@ -2,6 +2,8 @@
 
 source 'https://rubygems.org'
 
+ruby '2.6.1'
+
 gem 'rake'
 
 # Roda
@@ -29,7 +31,9 @@ gem 'dry-validation'
 ## not needed (dry-rb still in development)
 gem 'dry-types', github: 'dry-rb/dry-types'
 
-gem 'jsonapi-rb'
+gem 'jsonapi-deserializable', github: 'jsonapi-rb/jsonapi-deserializable', branch: :master
+gem 'jsonapi-rb', github: 'jsonapi-rb/jsonapi-rb', branch: :master
+gem 'jsonapi-serializable', github: 'jsonapi-rb/jsonapi-serializable', branch: :master
 
 group :development, :test do
   gem 'pry-byebug', platform: :mri

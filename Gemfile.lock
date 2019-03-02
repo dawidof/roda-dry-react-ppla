@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: git://github.com/dry-rb/dry-types.git
-  revision: 89ce79bf06f2595590e50eff217d5d75f27da594
+  revision: d5169850d13c5bb84ccc1333f03fddb3bd1ebe79
   specs:
     dry-types (0.15.0)
       concurrent-ruby (~> 1.0)
@@ -33,6 +33,30 @@ GIT
       dry-equalizer (~> 0.2)
       dry-inflector (~> 0.1, >= 0.1.2)
       dry-logic (~> 0.5, >= 0.5)
+
+GIT
+  remote: git://github.com/jsonapi-rb/jsonapi-deserializable.git
+  revision: 56a1d142250c9ca00ee99e266c85d8b875b73547
+  branch: master
+  specs:
+    jsonapi-deserializable (0.2.0)
+
+GIT
+  remote: git://github.com/jsonapi-rb/jsonapi-rb.git
+  revision: 4907306053f8c2b17a8cb8edb843edd499410ee0
+  branch: master
+  specs:
+    jsonapi-rb (0.5.0)
+      jsonapi-deserializable (~> 0.2.0)
+      jsonapi-serializable (~> 0.3.0)
+
+GIT
+  remote: git://github.com/jsonapi-rb/jsonapi-serializable.git
+  revision: cabf10e319a3ce8e52412d6f435fdca458ac2b56
+  branch: master
+  specs:
+    jsonapi-serializable (0.3.0)
+      jsonapi-renderer (~> 0.2.0)
 
 GIT
   remote: git://github.com/rom-rb/rom-sql.git
@@ -47,7 +71,7 @@ GIT
 
 GIT
   remote: git://github.com/rom-rb/rom.git
-  revision: 6e6a509fc4652c80fd06aafd960b594820d68da3
+  revision: 728e88cd15911b021b4c1d3909cda0b7af9c84a7
   specs:
     rom (4.2.1)
       rom-changeset (~> 1.0, >= 1.0.2)
@@ -130,13 +154,7 @@ GEM
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
-    jsonapi-deserializable (0.2.0)
-    jsonapi-rb (0.5.0)
-      jsonapi-deserializable (~> 0.2.0)
-      jsonapi-serializable (~> 0.3.0)
     jsonapi-renderer (0.2.0)
-    jsonapi-serializable (0.3.0)
-      jsonapi-renderer (~> 0.2.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -192,7 +210,9 @@ DEPENDENCIES
   dry-types!
   dry-validation
   dry-web
-  jsonapi-rb
+  jsonapi-deserializable!
+  jsonapi-rb!
+  jsonapi-serializable!
   pg
   pry-byebug
   puma
@@ -205,6 +225,9 @@ DEPENDENCIES
   rom-factory
   rom-sql!
   rspec
+
+RUBY VERSION
+   ruby 2.6.1p33
 
 BUNDLED WITH
    2.0.1
