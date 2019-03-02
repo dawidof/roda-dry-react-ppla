@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # class RodaDryReactPpla::Web
 #   route "courses" do |r|
 #     r.is do

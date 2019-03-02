@@ -1,16 +1,18 @@
-require_relative "application"
-require_relative "container"
+# frozen_string_literal: true
+
+require_relative 'application'
+require_relative 'container'
 
 module RodaDryReactPpla
   class Web < Application
     configure do |config|
       config.container = Container
-      config.routes = "routes".freeze
+      config.routes = 'routes'
     end
 
-    opts[:root] = Pathname(__FILE__).join("../..").realpath.dirname
+    opts[:root] = Pathname(__FILE__).join('../..').realpath.dirname
 
-    use Rack::Session::Cookie, key: "roda_dry_react_ppla.session", secret: self["settings"].session_secret
+    use Rack::Session::Cookie, key: 'roda_dry_react_ppla.session', secret: self['settings'].session_secret
 
     plugin :error_handler
     plugin :multi_route
