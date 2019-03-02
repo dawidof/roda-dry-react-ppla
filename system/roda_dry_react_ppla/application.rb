@@ -1,6 +1,8 @@
-require "roda"
-require "roda/plugins/flow"
-require "dry-configurable"
+# frozen_string_literal: true
+
+require 'roda'
+require 'roda/plugins/flow'
+require 'dry-configurable'
 
 module RodaDryReactPpla
   class Application < ::Roda

@@ -1,34 +1,41 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-gem "rake"
+source 'https://rubygems.org'
+
+gem 'rake'
 
 # Roda
 gem 'roda'
 gem 'roda-flow'
 
 # Web framework
-gem "dry-system", "~> 0.9"
-gem "dry-web", "~> 0.7"
-gem "puma"
+gem 'dry-system', github: 'dry-rb/dry-system'
+gem 'dry-web'
+gem 'puma'
 
-gem "rack", ">= 2.0"
-gem "rerun"
+gem 'rack', '>= 2.0'
+gem 'rerun'
 
 # Database persistence
-gem "pg"
-gem "rom", "~> 4.0"
-gem "rom-sql", "~> 2.1"
+gem 'pg'
+gem 'rom', github: 'rom-rb/rom'
+gem 'rom-sql', github: 'rom-rb/rom-sql'
 
 # Application dependencies
-gem "dry-struct", "~> 0.3"
-gem "dry-transaction", "~> 0.10"
-gem "dry-validation", "~> 0.11"
+gem 'dry-struct', github: 'dry-rb/dry-struct'
+gem 'dry-transaction'
+gem 'dry-validation'
+
+## not needed (dry-rb still in development)
+gem 'dry-types', github: 'dry-rb/dry-types'
+
+gem 'jsonapi-rb'
 
 group :development, :test do
-  gem "pry-byebug", platform: :mri
+  gem 'pry-byebug', platform: :mri
 end
 
 group :test do
-  gem "rspec"
-  gem "rom-factory", "~> 0.5"
+  gem 'rom-factory'
+  gem 'rspec'
 end
