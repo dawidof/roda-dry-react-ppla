@@ -1,21 +1,8 @@
 AllCops:
-  Include:
-    - Rakefile
-    - config.ru
-  Exclude:
-    - db/**/*
-    - script/**
-    - Gemfile
-    - Rakefile
-
-AllCops:
   TargetRubyVersion: 2.6
 
 StringLiterals:
   EnforcedStyle: single_quotes
-
-Metrics/LineLength:
-  Max: 120
 
 Documentation:
   Enabled: false
@@ -39,8 +26,13 @@ Metrics/BlockLength:
   Exclude:
     - spec/**/*
     - system/boot/*
+    - lib/tasks/*
+
+Style/ClassAndModuleChildren:
+  Enabled: false
 
 Metrics/LineLength:
+  Max: 120
   Exclude:
     - spec/**/*
 
