@@ -5,7 +5,7 @@ module RodaDryReactPpla
   class Web < Application
     configure do |config|
       config.container = Container
-      config.routes = "web/routes".freeze
+      config.routes = "routes".freeze
     end
 
     opts[:root] = Pathname(__FILE__).join("../..").realpath.dirname
