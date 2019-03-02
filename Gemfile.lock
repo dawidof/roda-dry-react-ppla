@@ -1,3 +1,76 @@
+GIT
+  remote: git://github.com/dry-rb/dry-struct.git
+  revision: a229ff44bbdd61b99b40406505256bd99ace3ac1
+  specs:
+    dry-struct (0.7.0)
+      dry-core (~> 0.4, >= 0.4.3)
+      dry-equalizer (~> 0.2)
+      dry-types (~> 0.15)
+      ice_nine (~> 0.11)
+
+GIT
+  remote: git://github.com/dry-rb/dry-system.git
+  revision: 62a54591162aa315d87a18680723f21e628d63f7
+  specs:
+    dry-system (0.11.0)
+      concurrent-ruby (~> 1.0)
+      dry-auto_inject (>= 0.4.0)
+      dry-configurable (~> 0.7, >= 0.7.0)
+      dry-container (~> 0.7)
+      dry-core (>= 0.3.1)
+      dry-equalizer (~> 0.2)
+      dry-inflector (~> 0.1, >= 0.1.2)
+      dry-struct (~> 0.6)
+
+GIT
+  remote: git://github.com/dry-rb/dry-types.git
+  revision: 89ce79bf06f2595590e50eff217d5d75f27da594
+  specs:
+    dry-types (0.15.0)
+      concurrent-ruby (~> 1.0)
+      dry-container (~> 0.3)
+      dry-core (~> 0.4, >= 0.4.4)
+      dry-equalizer (~> 0.2)
+      dry-inflector (~> 0.1, >= 0.1.2)
+      dry-logic (~> 0.5, >= 0.5)
+
+GIT
+  remote: git://github.com/rom-rb/rom-sql.git
+  revision: 545e93f5a2837f3b0cf11ed0dbbea800fc8b1188
+  specs:
+    rom-sql (2.5.0)
+      dry-core (~> 0.3)
+      dry-equalizer (~> 0.2)
+      dry-types (~> 0.15.0)
+      rom-core (~> 4.2)
+      sequel (>= 4.49)
+
+GIT
+  remote: git://github.com/rom-rb/rom.git
+  revision: 6e6a509fc4652c80fd06aafd960b594820d68da3
+  specs:
+    rom (4.2.1)
+      rom-changeset (~> 1.0, >= 1.0.2)
+      rom-core (~> 4.2, >= 4.2.1)
+      rom-repository (~> 2.0, >= 2.0.2)
+    rom-changeset (1.0.2)
+      dry-core (~> 0.3, >= 0.3.1)
+      rom-core (~> 4.0)
+      transproc (~> 1.0)
+    rom-core (4.2.1)
+      concurrent-ruby (~> 1.0)
+      dry-container (~> 0.6)
+      dry-core (~> 0.3)
+      dry-equalizer (~> 0.2)
+      dry-inflector (~> 0.1)
+      dry-initializer (~> 2.0)
+      dry-struct (~> 0.6)
+      dry-types (~> 0.15.0)
+    rom-repository (2.0.2)
+      dry-core (~> 0.3)
+      dry-initializer (~> 2.0)
+      rom-core (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -7,7 +80,7 @@ GEM
     diff-lcs (1.3)
     dry-auto_inject (0.6.0)
       dry-container (>= 0.3.4)
-    dry-configurable (0.8.1)
+    dry-configurable (0.8.2)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.4, >= 0.4.7)
     dry-container (0.7.0)
@@ -36,32 +109,11 @@ GEM
       dry-core (~> 0.4)
       dry-equalizer (~> 0.2)
       dry-events (~> 0.1)
-    dry-struct (0.6.0)
-      dry-core (~> 0.4, >= 0.4.3)
-      dry-equalizer (~> 0.2)
-      dry-types (~> 0.13)
-      ice_nine (~> 0.11)
-    dry-system (0.10.1)
-      concurrent-ruby (~> 1.0)
-      dry-auto_inject (>= 0.4.0)
-      dry-configurable (~> 0.7, >= 0.7.0)
-      dry-container (~> 0.6)
-      dry-core (>= 0.3.1)
-      dry-equalizer (~> 0.2)
-      dry-inflector (~> 0.1, >= 0.1.2)
-      dry-struct (~> 0.5)
     dry-transaction (0.13.0)
       dry-container (>= 0.2.8)
       dry-events (>= 0.1.0)
       dry-matcher (>= 0.7.0)
       dry-monads (>= 0.4.0)
-    dry-types (0.14.0)
-      concurrent-ruby (~> 1.0)
-      dry-container (~> 0.3)
-      dry-core (~> 0.4, >= 0.4.4)
-      dry-equalizer (~> 0.2)
-      dry-inflector (~> 0.1, >= 0.1.2)
-      dry-logic (~> 0.5, >= 0.5)
     dry-validation (0.13.0)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.1, >= 0.1.3)
@@ -78,6 +130,13 @@ GEM
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
+    jsonapi-deserializable (0.2.0)
+    jsonapi-rb (0.5.0)
+      jsonapi-deserializable (~> 0.2.0)
+      jsonapi-serializable (~> 0.3.0)
+    jsonapi-renderer (0.2.0)
+    jsonapi-serializable (0.3.0)
+      jsonapi-renderer (~> 0.2.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -101,43 +160,11 @@ GEM
     roda (3.17.0)
       rack
     roda-flow (0.4.0)
-    rom (4.2.0)
-      rom-changeset (~> 1.0, >= 1.0.2)
-      rom-core (~> 4.2, >= 4.2.0)
-      rom-repository (~> 2.0, >= 2.0.2)
-    rom-changeset (1.0.2)
-      dry-core (~> 0.3, >= 0.3.1)
-      rom-core (~> 4.0)
-      transproc (~> 1.0)
-    rom-core (4.2.0)
-      concurrent-ruby (~> 1.0)
-      dry-container (~> 0.6)
-      dry-core (~> 0.3)
-      dry-equalizer (~> 0.2)
-      dry-inflector (~> 0.1)
-      dry-initializer (~> 2.0)
-      dry-types (~> 0.12, >= 0.12.1)
-      rom-mapper (~> 1.1)
     rom-factory (0.7.0)
       dry-configurable (~> 0.7)
       dry-core (~> 0.3, >= 0.3.1)
       faker (~> 1.7)
       rom-core (~> 4.0)
-    rom-mapper (1.2.0)
-      dry-core (~> 0.3, >= 0.3.1)
-      dry-equalizer (~> 0.2)
-      dry-struct (~> 0.3)
-      transproc (~> 1.0)
-    rom-repository (2.0.2)
-      dry-core (~> 0.3)
-      dry-initializer (~> 2.0)
-      rom-core (~> 4.0)
-    rom-sql (2.5.0)
-      dry-core (~> 0.3)
-      dry-equalizer (~> 0.2)
-      dry-types (~> 0.12, >= 0.12.1)
-      rom-core (~> 4.1)
-      sequel (>= 4.49)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)
@@ -152,18 +179,20 @@ GEM
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
     ruby_dep (1.5.0)
-    sequel (5.17.0)
+    sequel (5.18.0)
     transproc (1.0.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  dry-struct (~> 0.3)
-  dry-system (~> 0.9)
-  dry-transaction (~> 0.10)
-  dry-validation (~> 0.11)
-  dry-web (~> 0.7)
+  dry-struct!
+  dry-system!
+  dry-transaction
+  dry-types!
+  dry-validation
+  dry-web
+  jsonapi-rb
   pg
   pry-byebug
   puma
@@ -172,9 +201,9 @@ DEPENDENCIES
   rerun
   roda
   roda-flow
-  rom (~> 4.0)
-  rom-factory (~> 0.5)
-  rom-sql (~> 2.1)
+  rom!
+  rom-factory
+  rom-sql!
   rspec
 
 BUNDLED WITH
