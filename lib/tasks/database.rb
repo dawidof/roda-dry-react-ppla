@@ -76,7 +76,8 @@ namespace :db do
     task :dump do
       if system('which pg_dump', out: File::NULL)
         uri = database_uri
-        system(postgres_env_vars(uri), "pg_dump -s -x -O #{Shellwords.escape(uri.path[1..-1])}", out: 'db/structure.sql')
+        file = 'db/structure.sql'
+        system(postgres_env_vars(uri), "pg_dump -s -x -O #{Shellwords.escape(uri.path[1..-1])}", out: file)
       else
         puts 'You must have pg_dump installed to dump the database structure'
       end
@@ -106,9 +107,7 @@ namespace :db do
         .reverse_order(:filename)
         .offset(step)
         .first
-    if target_migration
-      version = Integer(target_migration[:filename].match(/([\d]+)/)[0])
-    end
+    version = Integer(target_migration[:filename].match(/([\d]+)/)[0]) if target_migration
 
     ROM::SQL::RakeSupport.run_migrations(target: version)
     Rake::Task['db:structure:dump'].execute

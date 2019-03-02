@@ -12,6 +12,7 @@ module RodaDryReactPpla
     setting :routes
 
     plugin :flow
+    plugin :json
 
     def self.configure(&block)
       super.tap do
@@ -28,7 +29,7 @@ module RodaDryReactPpla
     end
 
     def self.load_routes!
-      Dir[root.join("#{config.routes}/**/*.rb")].each { |f| require f }
+      Dir[root.join("#{config.routes}/**/*.rb")].each(&method(:require))
     end
 
     def self.root
