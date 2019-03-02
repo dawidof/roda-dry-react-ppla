@@ -31,7 +31,7 @@ RodaDryReactPpla::Container.boot :db, namespace: true do |system|
 
   start do
     config = container['db.config']
-    config.auto_registration system.root.join('lib/db')
+    config.auto_registration system.root.join('app/db')
 
     register 'rom', ROM.container(config)
   end

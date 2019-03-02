@@ -11,9 +11,9 @@ module RodaDryReactPpla
       config.name = :roda_dry_react_ppla
       config.listeners = true
       config.default_namespace = 'roda_dry_react_ppla'
-      config.auto_register = %w[lib/roda_dry_react_ppla lib/db]
+      config.auto_register = %w[lib/roda_dry_react_ppla app/db]
     end
 
-    load_paths! 'lib'
+    load_paths!('lib', 'app')
   end
 end
