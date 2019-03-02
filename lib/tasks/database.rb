@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 def connection
-  RodaDryReactPpla::Container['persistence.db']
+  RodaDryReactPpla::Container['db.connection']
 end
 
 def settings
@@ -24,7 +24,7 @@ end
 
 namespace :db do
   task :setup do
-    RodaDryReactPpla::Container.init :persistence
+    RodaDryReactPpla::Container.init :db
   end
 
   desc 'Print current database schema version'

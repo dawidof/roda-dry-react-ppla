@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RodaDryReactPpla::Container.boot :persistence, namespace: true do |system|
+RodaDryReactPpla::Container.boot :db, namespace: true do |system|
   init do
     require 'sequel'
     require 'rom'
@@ -26,12 +26,12 @@ RodaDryReactPpla::Container.boot :persistence, namespace: true do |system|
     rom_config.plugin :sql, relations: :auto_restrictions
 
     register 'config', rom_config
-    register 'db', rom_config.gateways[:default].connection
+    register 'connection', rom_config.gateways[:default].connection
   end
 
   start do
-    config = container['persistence.config']
-    config.auto_registration system.root.join('lib/persistence')
+    config = container['db.config']
+    config.auto_registration system.root.join('lib/db')
 
     register 'rom', ROM.container(config)
   end

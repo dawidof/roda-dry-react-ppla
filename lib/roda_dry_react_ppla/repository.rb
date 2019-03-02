@@ -8,6 +8,6 @@ require 'roda_dry_react_ppla/import'
 
 module RodaDryReactPpla
   class Repository < ROM::Repository::Root
-    include Import.args['persistence.rom']
+    include Import.args['db.rom']
   end
 end

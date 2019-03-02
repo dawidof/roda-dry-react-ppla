@@ -5,11 +5,11 @@ module Test
     module_function
 
     def rom
-      RodaDryReactPpla::Container['persistence.rom']
+      RodaDryReactPpla::Container['db.rom']
     end
 
     def db
-      RodaDryReactPpla::Container['persistence.db']
+      RodaDryReactPpla::Container['db.connection']
     end
   end
 end

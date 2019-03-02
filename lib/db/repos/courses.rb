@@ -2,9 +2,9 @@
 
 require 'repository'
 
-module Persistence
-  module Repositories
-    class CoursesRepo < Repository[:courses]
+module Db
+  module Repos
+    class Courses < Repository[:courses]
       commands :create, update: :by_pk, delete: :by_pk
     end
   end

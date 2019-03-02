@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Persistence
+module Db
   module Relations
     class Courses < ROM::Relation[:sql]
       schema(:courses, infer: true) do
