@@ -2,7 +2,7 @@
 
 require_relative 'spec_helper'
 
-RodaDryReactPpla::Container.start :persistence
+RodaDryReactPpla::Container.start :db
 
 Dir[SPEC_ROOT.join('support/db/*.rb').to_s].each(&method(:require))
 Dir[SPEC_ROOT.join('shared/db/*.rb').to_s].each(&method(:require))

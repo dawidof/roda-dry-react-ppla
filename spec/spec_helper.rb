@@ -14,6 +14,8 @@ require SPEC_ROOT.join('../system/roda_dry_react_ppla/container')
 RSpec.configure do |config|
   config.disable_monkey_patching!
 
+  config.include SerializerHelpers, type: :serializer
+
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4.
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true

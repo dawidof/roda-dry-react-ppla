@@ -11,5 +11,9 @@ module Test
     def db
       RodaDryReactPpla::Container['db.connection']
     end
+
+    def create(resource, attributes = {})
+      Factory[resource, attributes]
+    end
   end
 end
