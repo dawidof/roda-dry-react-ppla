@@ -155,6 +155,7 @@ GEM
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     jsonapi-renderer (0.2.0)
+    jsonapi-rspec (0.0.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -212,6 +213,7 @@ DEPENDENCIES
   dry-web
   jsonapi-deserializable!
   jsonapi-rb!
+  jsonapi-rspec
   jsonapi-serializable!
   pg
   pry-byebug

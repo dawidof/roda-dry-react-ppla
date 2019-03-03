@@ -42,4 +42,5 @@ end
 group :test do
   gem 'rom-factory'
   gem 'rspec'
+  gem 'jsonapi-rspec'
 end
