@@ -40,7 +40,9 @@ group :development, :test do
 end
 
 group :test do
+  gem 'database_cleaner'
+  gem 'jsonapi-rspec'
+  gem 'rack-test'
   gem 'rom-factory'
   gem 'rspec'
-  gem 'jsonapi-rspec'
 end
