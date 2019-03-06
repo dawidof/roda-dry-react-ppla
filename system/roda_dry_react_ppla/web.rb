@@ -19,6 +19,8 @@ module RodaDryReactPpla
     plugin :not_found
     plugin :caching
 
+    include RodaDryReactPpla::Import['db.repos.course_repo', 'db.repos.question_repo']
+
     route do |r|
       r.root do
         'This application is made to learn dry-rb, roda gems and also react'

@@ -2,10 +2,10 @@
 
 module Db
   module Relations
-    class Courses < ROM::Relation[:sql]
-      schema(:courses, infer: true) do
+    class Questions < ROM::Relation[:sql]
+      schema(:questions, infer: true) do
         associations do
-          has_many :questions
+          belongs_to :course
         end
       end
 
@@ -13,8 +13,8 @@ module Db
         where(id: id)
       end
 
-      def questions
-        combine(:questions).one.questions
+      def course
+        combine(:course).one.course
       end
     end
   end
