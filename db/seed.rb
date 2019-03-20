@@ -1,4 +1,4 @@
-Course.create!([
+RodaDryReactPpla::Container['db.repos.course_repo'].courses.multi_insert([
   {name: "Człowiek Możliwości i Ograniczenia PPL(A)"},
   {name: "Łączność PPL(A)"},
   {name: "Meteorologia PPL(A)"},
@@ -9,7 +9,7 @@ Course.create!([
   {name: "Prawo Lotnicze PPL(A)"},
   {name: "Zasady Lotu PPL(A)"}
 ])
-Question.create!([
+RodaDryReactPpla::Container['db.repos.question_repo'].questions.multi_insert([
   {code: "PL060-0051", title: "Latem w Polsce Uniwersalny Czas Skoordynowany (UTC) obliczymy poprzez", position: 1, course_id: 4},
   {code: "PL040-0002", title: "Działanie kanałów półkolistych wynika z", position: 2, course_id: 1},
   {code: "PL040-0198", title: "Przy krwawieniu z żyły", position: 3, course_id: 1},
@@ -1970,7 +1970,7 @@ Question.create!([
   {code: "PL080-0530", title: "Zwichrzenie aerodynamiczne płata charakteryzuje się tym, że", position: 1958, course_id: 9},
   {code: "PL080-0531", title: "Zwichrzenie geometryczne płata charakteryzuje się tym, że", position: 1959, course_id: 9}
 ])
-Answer.create!([
+RodaDryReactPpla::Container['db.repos.answer_repo'].answers.multi_insert([
   {title: "odjęcie od czasu lokalnego (LMT) dwóch godzin [UTC LMT-2h]", position: 1, correct: true, question_id: 1},
   {title: "odjęcie od czasu lokalnego (LMT) jednej godziny [UTC LMT-1h]", position: 2, correct: false, question_id: 1},
   {title: "dodanie to czasu lokalnego (LMT) dwóch godzin [UTC LMT+2h]", position: 3, correct: false, question_id: 1},
