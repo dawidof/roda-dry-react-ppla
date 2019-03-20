@@ -12,10 +12,6 @@ module Db
       def by_id(id)
         where(id: id)
       end
-
-      def course
-        combine(:course).one.course
-      end
     end
   end
 end

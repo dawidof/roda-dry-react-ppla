@@ -19,7 +19,7 @@ module RodaDryReactPpla
     plugin :not_found
     plugin :caching
 
-    include RodaDryReactPpla::Import['db.repos.course_repo', 'db.repos.question_repo']
+    include RodaDryReactPpla::Import['db.repos.course_repo', 'db.repos.question_repo', 'db.repos.answer_repo']
 
     route do |r|
       r.root do

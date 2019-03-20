@@ -7,15 +7,14 @@ module RodaDryReactPpla
     extend Dry::Initializer
 
     param :resource
-    option :klass, proc(&:to_s)
+    option :classes
     option :prepend_model_class, default: proc { 'ROM::Struct::' }
-    option :serializer, default: proc { serializer }
     option :options, default: proc { {} }
 
     def call
       renderer.render(
         resource,
-        options.merge(class: { model_class => serializer })
+        options.merge(class: classes_hash)
       )
     end
 
@@ -25,15 +24,21 @@ module RodaDryReactPpla
       @renderer ||= JSONAPI::Serializable::Renderer.new
     end
 
-    def model_class
-      (prepend_model_class + class_name_without_api_version.classify).to_sym
+    def classes_hash
+      classes.each_with_object({}) do |klass, o|
+        o[model_class(klass)] = serializer(klass)
+      end
     end
 
-    def serializer
+    def model_class(klass)
+      (prepend_model_class + class_name_without_api_version(klass).classify).to_sym
+    end
+
+    def serializer(klass)
       Container.resolve("serializers.#{klass.tr('/', '.')}_serializer")
     end
 
-    def class_name_without_api_version
+    def class_name_without_api_version(klass)
       klass.sub(%r{api/v\d{1,2}/}, '')
     end
   end
