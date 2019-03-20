@@ -3,7 +3,7 @@
 require 'web_spec_helper'
 
 RSpec.describe 'Courses', type: :request do
-  let(:expected_attributes) { %w[id name url createdAt updatedAt] }
+  let(:expected_attributes) { %w[id name createdAt updatedAt] }
 
   describe 'GET api/v1/courses' do
     context 'without params' do

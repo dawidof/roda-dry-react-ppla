@@ -26,7 +26,6 @@ SET default_with_oids = false;
 CREATE TABLE public.courses (
     id integer NOT NULL,
     name text NOT NULL,
-    url text NOT NULL,
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
     updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
@@ -128,7 +127,6 @@ ALTER TABLE ONLY public.schema_migrations
 -- Name: courses_url_index; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE UNIQUE INDEX courses_url_index ON public.courses USING btree (url);
 
 
 --
