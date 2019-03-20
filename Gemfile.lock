@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dry-rb/dry-struct.git
-  revision: a229ff44bbdd61b99b40406505256bd99ace3ac1
+  revision: e6b13b0f1a25e215e0fc586d2e2773b9c1ee0f46
   specs:
     dry-struct (0.7.0)
       dry-core (~> 0.4, >= 0.4.3)
@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: git://github.com/dry-rb/dry-system.git
-  revision: 62a54591162aa315d87a18680723f21e628d63f7
+  revision: a44161743946f4d598a1e7aec414fc0171b6cbb9
   specs:
     dry-system (0.11.0)
       concurrent-ruby (~> 1.0)
@@ -24,43 +24,25 @@ GIT
 
 GIT
   remote: git://github.com/dry-rb/dry-types.git
-  revision: d5169850d13c5bb84ccc1333f03fddb3bd1ebe79
+  revision: 52bd119d2ebdd9d6ddc50d349c6abfa556aafbc2
   specs:
     dry-types (0.15.0)
       concurrent-ruby (~> 1.0)
       dry-container (~> 0.3)
       dry-core (~> 0.4, >= 0.4.4)
-      dry-equalizer (~> 0.2)
+      dry-equalizer (~> 0.2, >= 0.2.2)
       dry-inflector (~> 0.1, >= 0.1.2)
       dry-logic (~> 0.5, >= 0.5)
 
 GIT
-  remote: git://github.com/jsonapi-rb/jsonapi-deserializable.git
-  revision: 56a1d142250c9ca00ee99e266c85d8b875b73547
-  branch: master
+  remote: git://github.com/jsonapi-rb/jsonapi-renderer.git
+  revision: d6d44bf9f24229e3ecd8302ac77175dd1f27cf1f
   specs:
-    jsonapi-deserializable (0.2.0)
-
-GIT
-  remote: git://github.com/jsonapi-rb/jsonapi-rb.git
-  revision: 4907306053f8c2b17a8cb8edb843edd499410ee0
-  branch: master
-  specs:
-    jsonapi-rb (0.5.0)
-      jsonapi-deserializable (~> 0.2.0)
-      jsonapi-serializable (~> 0.3.0)
-
-GIT
-  remote: git://github.com/jsonapi-rb/jsonapi-serializable.git
-  revision: cabf10e319a3ce8e52412d6f435fdca458ac2b56
-  branch: master
-  specs:
-    jsonapi-serializable (0.3.0)
-      jsonapi-renderer (~> 0.2.0)
+    jsonapi-renderer (0.2.0)
 
 GIT
   remote: git://github.com/rom-rb/rom-sql.git
-  revision: 545e93f5a2837f3b0cf11ed0dbbea800fc8b1188
+  revision: 716b046562044a3681b2096a11624525b0d96902
   specs:
     rom-sql (2.5.0)
       dry-core (~> 0.3)
@@ -71,7 +53,7 @@ GIT
 
 GIT
   remote: git://github.com/rom-rb/rom.git
-  revision: 728e88cd15911b021b4c1d3909cda0b7af9c84a7
+  revision: 3f8009dd14e75b9a2345f4fe45bbb9484e80058c
   specs:
     rom (4.2.1)
       rom-changeset (~> 1.0, >= 1.0.2)
@@ -82,7 +64,7 @@ GIT
       rom-core (~> 4.0)
       transproc (~> 1.0)
     rom-core (4.2.1)
-      concurrent-ruby (~> 1.0)
+      concurrent-ruby (~> 1.1)
       dry-container (~> 0.6)
       dry-core (~> 0.3)
       dry-equalizer (~> 0.2)
@@ -98,9 +80,9 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    byebug (11.0.0)
+    byebug (11.0.1)
     coderay (1.1.2)
-    concurrent-ruby (1.1.4)
+    concurrent-ruby (1.1.5)
     database_cleaner (1.7.0)
     diff-lcs (1.3)
     dry-auto_inject (0.6.0)
@@ -113,7 +95,7 @@ GEM
       dry-configurable (~> 0.1, >= 0.1.3)
     dry-core (0.4.7)
       concurrent-ruby (~> 1.0)
-    dry-equalizer (0.2.1)
+    dry-equalizer (0.2.2)
     dry-events (0.1.0)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.4)
@@ -152,11 +134,16 @@ GEM
     faker (1.9.3)
       i18n (>= 0.7)
     ffi (1.10.0)
-    i18n (1.5.3)
+    i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
-    jsonapi-renderer (0.2.0)
+    jsonapi-deserializable (0.2.0)
+    jsonapi-rb (0.5.0)
+      jsonapi-deserializable (~> 0.2.0)
+      jsonapi-serializable (~> 0.3.0)
     jsonapi-rspec (0.0.2)
+    jsonapi-serializable (0.3.1)
+      jsonapi-renderer (~> 0.2.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -169,7 +156,7 @@ GEM
     pry-byebug (3.7.0)
       byebug (~> 11.0)
       pry (~> 0.10)
-    puma (3.12.0)
+    puma (3.12.1)
     rack (2.0.6)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -179,7 +166,7 @@ GEM
       ffi (~> 1.0)
     rerun (0.13.0)
       listen (~> 3.0)
-    roda (3.17.0)
+    roda (3.18.0)
       rack
     roda-flow (0.4.0)
     rom-factory (0.7.0)
@@ -215,10 +202,9 @@ DEPENDENCIES
   dry-types!
   dry-validation
   dry-web
-  jsonapi-deserializable!
-  jsonapi-rb!
+  jsonapi-rb
+  jsonapi-renderer!
   jsonapi-rspec
-  jsonapi-serializable!
   pg
   pry-byebug
   puma
